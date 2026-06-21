@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-eval-lite"
+version = "0.1.0"
+description = "Lightweight evaluation metrics for RAG (Hit@k, Recall@k, MRR, nDCG)"
+authors = [
+    { name = "Manu Yadav" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+keywords = ["rag", "evaluation", "retrieval", "genai", "llm"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = ""
+
+[tool.setuptools.packages.find]
+where = ["."]
