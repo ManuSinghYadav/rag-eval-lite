@@ -59,7 +59,7 @@ def evaluate_dataset(
 
     failures = []
 
-    for idx, row in enumerate(data):
+    for idx, row in enumerate[Dict[str, Any]](data):
         golden = row.get("golden_chunk_ids", [])
         retrieved = row.get("retrieved_chunk_ids", [])
 
@@ -110,4 +110,3 @@ def evaluate_dataset(
         result["num_failures"] = len(failures)
 
     return result
-    

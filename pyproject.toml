@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rag-eval-lite"
-version = "0.1.0"
-description = "Lightweight evaluation metrics for RAG (Hit@k, Recall@k, MRR, nDCG)"
+version = "0.1.1"
+description = "Lightweight evaluation metrics for RAG (Hit@k, Recall@k, Precision@k MRR, nDCG, and more)"
 authors = [
     { name = "Manu Yadav" }
 ]
@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = ""
+GitHub = "https://github.com/ManuSinghYadav/rag-eval-lite"
 
 [tool.setuptools.packages.find]
 where = ["."]
