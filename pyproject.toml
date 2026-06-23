@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rag-eval-lite"
-version = "0.1.1"
-description = "Lightweight evaluation metrics for RAG (Hit@k, Recall@k, Precision@k MRR, nDCG, and more)"
+version = "0.1.2"
+description = "Lightweight evaluation metrics for RAG (Hit@k, Recall@k, Precision@k, MRR, nDCG, and more)"
 authors = [
     { name = "Manu Yadav" }
 ]
