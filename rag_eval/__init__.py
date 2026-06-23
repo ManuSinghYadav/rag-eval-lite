@@ -1,3 +1,14 @@
-from .metrics import evaluate_dataset
+from .metrics import (
+    RAGEvaluator,
+    QueryResult,
+    QueryScore,
+    EvalReport,
+)
 
-__all__ = ["evaluate_dataset"]
+__version__ = "0.1.0"
+__all__ = [
+    "RAGEvaluator",
+    "QueryResult",
+    "QueryScore",
+    "EvalReport",
+]
