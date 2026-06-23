@@ -26,18 +26,19 @@ Each query gets diagnosed in priority order:
 ### Usage in your package
 
 ```python
-from rag_eval import RAGEvaluator, QueryResult
+from rag_eval import RAGEvaluator
 
-evaluator = RAGEvaluator(k=5)
-
-results = [
-    QueryResult("q1", retrieved_chunks=[...], relevant_chunks={...}),
-    QueryResult("q2", retrieved_chunks=[...], relevant_chunks={...}),
+dataset = [
+    {
+        "question": "What is the significance of Apple's manufacturing...",
+        "relevent_chunks": ["pdf_chunk_94", "pdf_chunk_17", "pdf_chunk_107"],
+        "retrieved_chunks": ["pdf_chunk_94", "pdf_chunk_91", "pdf_chunk_95"]
+    },
+    ...
 ]
 
-report = evaluator.evaluate(results)
-evaluator.report(report)               # full verbose output
-evaluator.report(report, verbose=False) # just the summary table
+report = RAGEvaluator.from_dict_list(dataset, k=5)
+RAGEvaluator(k=5).report(report)
 ```
 
 You can also access `report.per_query` and `report.failed_queries` programmatically if you want to log them to MLflow or W&B Weave.

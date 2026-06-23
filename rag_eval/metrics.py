@@ -275,3 +275,25 @@ class RAGEvaluator:
             print(f"\n{sep}\n")
         else:
             print()
+
+    @classmethod
+    def from_dict_list(cls, data: list[dict], k: int = 5) -> "EvalReport":
+        """
+        Accepts a list of dicts with keys:
+        - 'question'         → used as query_id
+        - 'relevent_chunks'  → list of relevant chunk IDs
+        - 'retrieved_chunks' → list of retrieved chunk IDs
+
+        Example:
+            report = RAGEvaluator.from_dict_list(dataset, k=5)
+        """
+        evaluator = cls(k=k)
+        queries_results = [
+            QueryResult(
+                query_id=item["question"],
+                retrieved_chunks=item["retrieved_chunks"],
+                relevant_chunks=set(item["relevent_chunks"]),
+            )
+            for item in data
+        ]
+        return evaluator.evaluate(queries_results)
